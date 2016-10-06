@@ -1,31 +1,10 @@
-/*
-
-const generatePrintFunc = function(key) {
-  return function(person) {
-    console.log(person[key]);
-  }
-}
-
-const people = [
-{name: 'Jane', age: '12' },
-{name: 'Tom', age: '11'},
-]
-
-//print name
-people.forEach(generatePrintFunc('name'));
-people.forEach(generatePrintFunc('age'));
-
-// ------------------------------------*/
-
 'use strict';
-
-
 /*
 Implement a function countdownGenerator() that takes in a number x and returns
 a function that counts down when it is called (see below):
 */
 
-var countdownGenerator = function (x) {
+let countdownGenerator = function (x) {
   var time = x;
 
 
@@ -42,7 +21,7 @@ return function () {
 }
 }
 
-var countdown = countdownGenerator(-12);
+const countdown = countdownGenerator(-12);
 countdown(); // T-minus 3...
 countdown(); // T-minus 2...
 countdown(); // T-minus 1...
