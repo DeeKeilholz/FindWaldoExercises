@@ -1,0 +1,103 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh12940\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 Function Expression (is \'93with the var\'94) 
+\b0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 var sumArray = function ()\
+ - sets a variable to a function\
+ - need to express (declare) our function before we call it \
+ - setting a variable to a function doesn\'92t allow for function \'93hoisting\'94 (call function before it\'92s defined)\
+\
+In JS we can call functions before defining them, but defining the function first, is better, so declare function first, then call. \
+\
+
+\b Function Declaration
+\b0 \
+function sumArray () \
+ - declaring a function\
+ - function hoisting would work\
+\
+declaring\
+expressing\
+calling \
+ - a function\
+\
+Hoisting is useful when running multiple scripts, but if there\'92s a bug it\'92ll be hard to fix. \
+\
+\
+If it came to two competing functions the expressed function wins. \
+\
+
+\b Debugger Tool\
+
+\b0 \
+- add \'93debugger;\'94 anywhere (debugger checkpoint) \
+- node debug FILENAME in terminal\
+- type \'93C\'94 and press enter\
+- type \'93repl\'94\
+\
+\
+EXPRESSION\
+var getValue = function () \{\
+  return 44;\
+\}\
+\
+CALLING THE FUNCTION\
+var my_var = getValue();\
+\
+
+\b Callback Function\
+\
+
+\b0 A function that is passed to another function. 
+\b \
+\
+
+\b0 countDown(80, function(n, time-diff) \{\
+console.log (`Counting to $\{n\} took $\{time_diff\} ms`);\
+\}, \
+countDown(80, callback);\
+\
+Whenever we pass a callback we\'92re passing the function.\
+\
+
+\b Const and Let\
+
+\b0 \
+Const means, we can never reassign (stuff we don\'92t want to change)\
+EX: const a = 5 (a is always 5)\
+Let things we want to change, like variables. \
+EX: let a = 5 (a can be 5 or something else) \
+\
+\
+\
+LOOK UP\
+- functions that come with JS (like .getTime)\
+- function arguments\
+\
+\
+\
+
+\b Map Function
+\b0 \
+\
+Map function changes each item in an array, the callback function is what changes it (multiply, divide etc.). \
+\
+\
+node\
+\
+\
+\
+-  add into the comments what we\'92re passing into a function, e;g. \
+@params:\
+\'92num\'92: integer\
+\'91_done\'92: callback function \
+\
+underscore before every callback function\
+\
+\
+}
