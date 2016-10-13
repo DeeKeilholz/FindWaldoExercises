@@ -53,16 +53,10 @@ getRepoContributors(gitHubRepoOwner, gitHubRepoName, function(error, response, b
   console.log(`${contributors.length} contributors:\n`);
 
 
-
-
-  contributors.forEach(   ) {
-    downloadImageByUrl(contributor.avatar_url, 'AvatarImages.png', function(){
-      console.log('done');
-    });
-  });
-
-})
-
+  // Extend your program to grab the avatar_url attribute from each contributor.
+  // You can find these URLs in the API response from the previous step.
+  // Try implementing a function which can make a request to a given url, and
+  // write the result to a specified filepath:
 
 
 contributors.forEach((contributor) {
@@ -74,22 +68,12 @@ contributors.forEach((contributor) {
  });
 
 
+ function downloadImageByURL(url, filePath) {
+ var writeStream = fs.createWriteStream(filePath);
+ request({url: url}).pipe(writeStream);
+}
+
+
 
 //repoOwner: lighthouse-labs
 //repoName: laser_shark
-
-
-// Extend your program to grab the avatar_url attribute from each contributor.
-// You can find these URLs in the API response from the previous step.
-// Try implementing a function which can make a request to a given url, and
-// write the result to a specified filepath:
-
-
-function downloadImageByUrl (uri, filename, callback){
-  request.head(uri, function(err, res, body){
-    console.log('content-type:', res.headers['content-type']);
-    console.log('content-length:', res.headers['content-length']);
-
-    request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
-  });
-};
