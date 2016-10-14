@@ -5,7 +5,11 @@
 var request = require('request');
 var dotenv = require('dotenv');
 dotenv.config();
-
+var fs = require('fs');
+var dir = './avatar';
+  if (!fs.existsSync(dir)){
+       fs.mkdirSync(dir);
+}
 
 // Makes an un-authenticated request to github
 function gitHubRequest(endpoint, _cb) {
@@ -59,19 +63,22 @@ getRepoContributors(gitHubRepoOwner, gitHubRepoName, function(error, response, b
   // write the result to a specified filepath:
 
 
-contributors.forEach((contributor) {
-   var avatarURL = contributor["avatar_url"];
-   var username = contributor["login"];
-   var filePath = `avatars/${username}.jpeg`;
-   console.log(`Downloading ${username}'s avatar'`);
-   downloadImageByURL(avatarURL, filePath);
- });
+//fs function to create the avatar folder
 
+  contributors.forEach((contributor) => {
+     var avatarURL = contributor["avatar_url"];
+     var username = contributor["login"];
+     var filePath = `avatars/${username}.jpeg`;
+     console.log(`Downloading ${username}'s avatar'`);
+     downloadImageByURL(avatarURL, filePath);
+  });
 
- function downloadImageByURL(url, filePath) {
- var writeStream = fs.createWriteStream(filePath);
- request({url: url}).pipe(writeStream);
-}
+  //writeStream "Stream On" method
+
+  function downloadImageByURL(url, filePath) {
+    var writeStream = fs.createWriteStream(filePath);
+    request({url: url}).pipe(writeStream);
+  }});
 
 
 
