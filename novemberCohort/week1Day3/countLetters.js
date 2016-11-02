@@ -8,8 +8,10 @@ var count = {};
 
 // join converts array to string, split converts string back to array
 string.join('').split('').forEach(function(character) {
+  //if theres's more than one instance of letters, increment
   if (count[character] == true) {
      count[character]++
+ // else, set character count to 1
 } else {
      count[character] = 1
 }
